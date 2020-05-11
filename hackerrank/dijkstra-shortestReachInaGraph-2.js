@@ -1,7 +1,4 @@
-const printHeap = (a, heapSize) => {
-  for (let i = 1; i <= heapSize; i++) process.stdout.write(' ' + a[i] + ' |')
-  console.log()
-}
+// https://www.hackerrank.com/challenges/dijkstrashortreach/problem?h_r=internal-search
 
 const swap = (a, i, j) => {
   const temp = a[i];
@@ -47,9 +44,9 @@ class Heap {
     this.heap.push(node);
     
     let i = this.heapSize - 1;
-    while (i !== 0 && this.heap[this.parent(i)] > this.heap[i]) {
+    while (i !== 0 && this.heap[this.parent(i)].weight > this.heap[i].weight) {
       swap(this.heap, i, this.parent(i))
-      i = parent(i);
+      i = this.parent(i);
     }
   }
 
@@ -156,23 +153,9 @@ function processData(input) {
 }
 
 processData(`1
-4 4
+5 4
 1 2 24
 1 4 20
 3 1 3
 4 3 12
 1`)
-
-// processData(`1
-// 7 10
-// 1 2 5
-// 3 1 32
-// 1 4 3
-// 2 3 4
-// 2 6 20
-// 6 3 1
-// 6 4 9
-// 6 5 6
-// 3 7 18
-// 5 7 2
-// 1`)
