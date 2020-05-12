@@ -1,5 +1,5 @@
 // https://www.thehuxley.com/problem/577
-const Heap = require('../data_structures/Heap');
+const Heap = require('../dataStructures/Heap');
 
 const swap = (a, i, j) => {
   const temp = a[i];
