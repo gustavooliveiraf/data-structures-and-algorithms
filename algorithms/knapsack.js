@@ -1,8 +1,8 @@
-const knapsack = (W, wt, val, n) => {
+const knapsack = (W, wt, val) => {
+  const n = val.length;
   const K = new Array(n + 1);
   for (let i = 0; i < (n + 1); i++) K[i] = new Array(W + 1);
 
-  // Build table K[][] in bottom up manner
   for (let i = 0; i <= n; i++) {
     for (let w = 0; w <= W; w++) {
       if (i==0 || w==0)
@@ -17,4 +17,4 @@ const knapsack = (W, wt, val, n) => {
   return K[n][W];
 }
 
-console.log(knapsack(50, [10, 20, 30], [60, 100, 120], 4));
+console.log(knapsack(50, [10, 20, 30], [60, 100, 120]));

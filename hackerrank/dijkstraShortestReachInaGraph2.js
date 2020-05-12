@@ -14,9 +14,9 @@ class HeapNode {
 }
 
 class Heap {
-  constructor() {
-    this.heap = new Array();
-    this.heapSize = 0;
+  constructor(heap = []) {
+    this.heap = heap;
+    this.heapSize = this.heap.length;
   }
 
   parent(i) { return parseInt((i-1)/2); }

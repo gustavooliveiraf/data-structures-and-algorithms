@@ -1,6 +1,6 @@
 const print = (subset) => {
   for(let i = 0; i < subset.length; i++) if (subset[i]) process.stdout.write(subset[i] + ' ')
-  console.log(subset)
+  console.log()
 }
 
 const helper = (array, subset, i) => {

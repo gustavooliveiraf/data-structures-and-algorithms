@@ -11,8 +11,8 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      // "program": "${workspaceFolder}/hackerrank/shortestReachInaGraph.js"
-      "program": "${workspaceFolder}/data_structures/dijkstra.js"
+      "program": "${workspaceFolder}/hackerrank/kruskalReallySpecialSubtree.js"
+      // "program": "${workspaceFolder}/data_structures/Heap.js"
     }
   ]
 }
