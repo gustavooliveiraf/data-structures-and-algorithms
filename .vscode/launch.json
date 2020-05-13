@@ -11,8 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/hackerrank/kruskalReallySpecialSubtree.js"
-      // "program": "${workspaceFolder}/data_structures/Heap.js"
+      "program": "${workspaceFolder}/hackerrank/findtheRunningMedian.js"
     }
   ]
 }
