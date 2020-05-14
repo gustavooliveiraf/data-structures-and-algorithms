@@ -68,7 +68,7 @@ function print(minHeap, maxHeap) {
   else if ((minHeap.size() < maxHeap.size()))
     console.log(maxHeap.heap[0].toFixed(1));
   else
-    console.log(((minHeap.heap[0] + maxHeap.heap[0]) / 2).toFixed(1))
+    console.log(((minHeap.heap[0] + maxHeap.heap[0]) / 2).toFixed(1));
 }
 
 function runningMedian(a) {
