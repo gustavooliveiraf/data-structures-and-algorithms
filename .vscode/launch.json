@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/hackerrank/findtheRunningMedian.js"
+      "program": "${workspaceFolder}/hackerrank/balancedBrackets.js"
     }
   ]
 }

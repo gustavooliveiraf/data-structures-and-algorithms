@@ -17,11 +17,11 @@ class Queue {
     return this.front === null;
   }
 
-  enqueue(item) {
+  push(item) {
     const temp = new QueueNode(item);
     
     if (this.rear === null) {
-      this.front = this. rear = temp;
+      this.front = this.rear = temp;
       return;
     }
 
@@ -29,7 +29,7 @@ class Queue {
     this.rear = temp;
   }
 
-  dequeue() {
+  pop() {
     if (this.isEmpty()) return null;
 
     const temp = this.front;
@@ -71,10 +71,10 @@ const shortestDistances = (graph, s) => {
 
   visited[s] = true;
   distance[s] = 0;
-  queue.enqueue(s);
+  queue.push(s);
 
   while (!queue.isEmpty()) {
-    const vertex = queue.dequeue().index;
+    const vertex = queue.pop().index;
 
     const { length } = graph.adjList[vertex];
     for (let i = 0; i < length; i++) {
@@ -84,7 +84,7 @@ const shortestDistances = (graph, s) => {
 
       visited[index] = true;
       distance[index] = distance[vertex] + weight;
-      queue.enqueue(index);
+      queue.push(index);
     }
   }
 
