@@ -1,10 +1,11 @@
 function processInput(input) {
   // const processedInput = input
+  //   .trim()
   //   .split('\n')
   //   .map(elem => elem.split(' ').map(elem => parseInt(elem)))
   //   .reduce((acc, val) => acc.concat(val), []);
 
-  const processedInput = input.replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
+  const processedInput = input.trim().replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
 
   return main(processedInput);
 }

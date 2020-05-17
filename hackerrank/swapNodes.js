@@ -49,14 +49,10 @@ class Node {
 }
 
 class BinarySearchTree {
-  constructor(root = null) {
-    this.root = root;
-  }
-
-  insertInLevelOrder(indexes) {
+  insertInLevelOrder(root, indexes) {
     let index = 1;
     const queue = new Queue();
-    queue.push(this.root);
+    queue.push(root);
   
     while (queue.isEmpty() === false) {
       const left = indexes[index++];
@@ -100,16 +96,16 @@ function swapNodes(node, level, k) {
 }
 
 function main(processedInput) {
-  const rootNode = new Node(1);
-  const bst = new BinarySearchTree(rootNode);
+  const root = new Node(1);
+  const bst = new BinarySearchTree();
 
-  let index = bst.insertInLevelOrder(processedInput);
+  let index = bst.insertInLevelOrder(root, processedInput);
 
   const length = processedInput[index++];
   for (let i = 0; i < length; i++) {
     const k = processedInput[index++];
-    swapNodes(bst.root, 1, k);
-    bst.inorder(bst.root);
+    swapNodes(root, 1, k);
+    bst.inorder(root);
     process.stdout.write('\n');
   }
 }
