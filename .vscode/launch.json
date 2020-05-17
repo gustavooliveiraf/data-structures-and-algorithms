@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/hackerrank/balancedBrackets.js"
+      "program": "${workspaceFolder}/hackerrank/swapNodes.js"
     }
   ]
 }

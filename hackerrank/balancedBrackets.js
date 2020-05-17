@@ -1,3 +1,4 @@
+// https://www.hackerrank.com/challenges/balanced-brackets/problem
 class StackNode {
   constructor(index) {
     this.index = index;

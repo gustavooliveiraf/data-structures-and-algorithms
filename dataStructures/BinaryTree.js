@@ -11,28 +11,18 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  insertNode(node, newNode) {
-    if(newNode.data < node.data) {
-      if(node.left === null) node.left = newNode;
-      else this.insertNode(node.left, newNode);
-    } else {
-      if(node.right === null) node.right = newNode;
-      else this.insertNode(node.right,newNode);
-    }
+  insert(node, value) {
+    if (node === null)
+        return new Node(value);
+    else if (value < node.value)
+        node.left = this.insert(node.left, value);
+    else
+        node.right = this.insert(node.right, value);
+
+    return node;
   }
 
-  insert(data) {
-    const newNode = new Node(data);
-
-    if (this.root === null) this.root = newNode;
-    else this.insertNode(this.root, newNode);
-  }
-
-  remove(data) {
-    this.root = this.removeNode(this.root, data);
-  }
-
-  removeNode(node, key) {
+  remove(node, key) {
     if(node === null) return null;
 
     else if(key < node.data) { 
@@ -72,7 +62,7 @@ class BinarySearchTree {
     }
   }
 
-  checkHeight(root) {
+  checkBalanced(root) {
     if (!root) return -1;
     
     const leftHeight = this.checkHeight(root.left);
@@ -83,14 +73,6 @@ class BinarySearchTree {
     
     const heightDiff = Math.abs(leftHeight - rightHeight);
     return heightDiff > 1 ? -Infinity : Math.max(leftHeight, rightHeight) + 1;
-  }
-
-  checkBalanced(root) {
-    return this.checkHeight(root) !== -Infinity;
-  }
-
-  getRootNode() {
-    return this.root;
   }
 
   findMinNode(node) {
