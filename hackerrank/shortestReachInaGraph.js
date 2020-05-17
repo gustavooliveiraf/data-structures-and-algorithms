@@ -123,13 +123,13 @@ function main(input) {
   }
 }
 
-function processData(input) {
+function processInput(input) {
   const processedInput = input.replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
 
   main(processedInput);
 }
 
-processData(`2
+processInput(`2
 4 2
 1 2
 1 3

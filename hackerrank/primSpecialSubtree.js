@@ -1,4 +1,4 @@
-// https://www.hackerrank.com/challenges/dijkstrashortreach/problem?h_r=internal-search
+// https://www.hackerrank.com/challenges/primsmstsub/problem
 const swap = (a, i, j) => {
   const temp = a[i];
   a[i] = a[j];
@@ -17,7 +17,7 @@ class Heap {
     this.heap = heap;
   }
 
-  parent(i) { return parseInt((i-1)/2); }
+  parent(i) { return parseInt((i - 1) / 2); }
 
   left(i) { return 2 * i + 1; }
 
@@ -89,11 +89,12 @@ class Graph {
   }
 }
 
-const dijkstra = (graph, s) => {
+const prim = (graph, s) => {
   const adjList = graph.adjList;
   const marked = new Array(adjList.length).fill(false);
   const distance= new Array(adjList.length).fill(Infinity);
   const heap = new Heap();
+  let totalWeight = 0;
 
   distance[s] = 0;
   heap.push(s, 0);
@@ -103,64 +104,52 @@ const dijkstra = (graph, s) => {
 
     if (marked[vertex] === true) continue;
     marked[vertex] = true;
+    totalWeight += distance[vertex];
 
     const { length } = graph.adjList[vertex];
     for (let i = 0; i < length; i++) {
       const { index, weight } = adjList[vertex][i];
 
-      if (marked[index] === false && distance[index] > (distance[vertex] + weight)) {
-        distance[index] = distance[vertex] + weight;
+      if (marked[index] === false && distance[index] > weight) {
+        distance[index] = weight;
         heap.push(index, distance[index]);
       }
     }
   }
 
-  return distance;
+  return totalWeight;
 }
 
-function print(distance, s) {
-  const { length } = distance;
-  for (let i = 0; i < length; i++) {
-    if (i !== s) {
-      if (distance[i] === Infinity) distance[i] = -1;
-      process.stdout.write(distance[i] + ' ');
-    }
-  }
-  process.stdout.write('\n');
-}
-
-function main(input) {
+function main(queries) {
   let index = 0;
-  const queries = input[index++];
 
-  for (let i = 0; i < queries; i++) {
-    const n = input[index++];
-    const m = input[index++];
+  const n = queries[index++];
+  const m = queries[index++];
 
-    const graph = new Graph(n);
-    for (let j = 0; j < m; j++) {
-      graph.addEdge(--input[index], --input[index+1], input[index+2]);
-      index += 3;
-    }
-
-    const start = --input[index++];
-
-    const output = dijkstra(graph, start);
-    
-    print(output, start);
+  const graph = new Graph(n);
+  for (let j = 0; j < m; j++) {
+    graph.addEdge(--queries[index], --queries[index+1], queries[index+2]);
+    index += 3;
   }
+
+  const start = --queries[index];
+
+  const output = prim(graph, start);
+
+  process.stdout.write(output.toString());
 }
 
 function processInput(input) {
-  const processedInput = input.replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
+  const processedInput = input.trim().replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
 
   main(processedInput);
 }
 
-processInput(`1
-5 4
-1 2 24
-1 4 20
-3 1 3
-4 3 12
+processInput(`5 6
+1 2 3
+1 3 4
+4 2 6
+5 2 2
+2 3 5
+3 5 7
 1`)

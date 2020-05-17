@@ -100,13 +100,13 @@ function main(input) {
   console.log(kruskal(graph));
 }
 
-function processData(input) {
+function processInput(input) {
   const processedInput = input.replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
 
   main(processedInput);
 }
 
-processData(`5 7
+processInput(`5 7
 1 2 20
 1 3 50
 1 4 70

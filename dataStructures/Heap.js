@@ -8,9 +8,8 @@ const swap = (a, i, j) => {
 class Heap {
   constructor(heap = []) {
     this.heap = heap;
-    this.heapSize = this.heap.length;
 
-    if (this.heapSize > 0) this.buildMinHeap();
+    if (!this.empty()) this.buildMinHeap();
   }
 
   parent(i) { return parseInt((i - 1) / 2); }
@@ -19,11 +18,18 @@ class Heap {
 
   right(i) { return 2 * i + 2 }
 
+  size() {
+    return this.heap.length;
+  }
+
+  empty() {
+    return this.size() === 0;
+  }
+
   push(weight) {
-    this.heapSize++;
     this.heap.push(weight);
     
-    let i = this.heapSize - 1;
+    let i = this.size() - 1;
     while (i !== 0 && this.heap[this.parent(i)] > this.heap[i]) {
       swap(this.heap, i, this.parent(i))
       i = this.parent(i);
@@ -31,17 +37,17 @@ class Heap {
   }
 
   pop() {
-    if (this.heapSize === 0) return null;
+    if (this.emepty()) return null;
 
     const temp = this.heap[0];
-    this.heap[0] = this.heap[--this.heapSize];
+    this.heap[0] = this.heap[this.size() - 1];
     this.heap.pop();
     this.maxHeapify(0);
 
     return temp;
   }
 
-  maxHeapify(i, heapSize = this.heapSize) {
+  maxHeapify(i, heapSize = this.size()) {
     const l = this.left(i);
     const r = this.right(i);
 
@@ -55,7 +61,7 @@ class Heap {
   }
 
   buildMinHeap() {
-    for (let i = parseInt(this.heapSize / 2); i >= 0; i--)
+    for (let i = parseInt(this.size() / 2); i >= 0; i--)
       this.maxHeapify(i);
   }
 }

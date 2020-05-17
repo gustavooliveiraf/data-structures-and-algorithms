@@ -10,9 +10,9 @@ const swap = (a, i, j) => {
 const heapSort = (array) => {
   const heap = new Heap(array);
 
-  for (let i = heap.heapSize - 1, j = 1; i >= 1; i--, j++) {
+  for (let i = heap.size() - 1, j = 1; i >= 1; i--, j++) {
     swap(array, 0, i);
-    heap.maxHeapify(0, heap.heapSize - j);
+    heap.maxHeapify(0, heap.size() - j);
   }
 
   return heap.heap;
