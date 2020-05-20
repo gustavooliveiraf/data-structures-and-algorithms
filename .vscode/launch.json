@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/hackerrank/contacts.js"
+      "program": "${workspaceFolder}/hackerrank/knapsack.js"
     }
   ]
 }

@@ -13,16 +13,14 @@ class Node {
 class BTree {
   insert(root, key) {
     let pointer = root;
-    const { length } = key;
+    const length = key.length - 1;
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i <= length; i++) {
       const index = charToIndex(key[i]);
       if (!pointer.children[index])
         pointer.children[index] = new Node();
-      else {
-        if (i === (length - 1))
+      else if (i === length)
           return key;
-      }
 
       pointer = pointer.children[index];
 

@@ -3,19 +3,25 @@ const print = (subset) => {
   console.log()
 }
 
-const helper = (array, subset, i) => {
-  if (i === array.length) print(subset)
+const allSubsetsVersion1 = (array, subset, i) => {
+  if (i === array.length)
+    print(subset)
   else {
     subset[i] = null
-    helper(array, subset, i+1)
+    allSubsetsVersion1(array, subset, i+1)
     subset[i] = array[i]
-    helper(array, subset, i+1)
+    allSubsetsVersion1(array, subset, i+1)
   }
 }
 
-const allSubsets = (array) => {
-  const subset = []
-  helper(array, subset, 0)
+function allSubsetsVersion2(n, i, partial) {
+  if (i == -1)
+    console.log(partial)
+  else {
+    allSubsetsVersion2(n, i - 1, partial)
+    allSubsetsVersion2(n, i - 1, partial.concat(n[i]))
+  }
 }
 
-allSubsets([1, 2, 3])
+// allSubsetsVersion1([1, 2, 3, 4], [], 0)
+allSubsetsVersion2([1, 2, 3, 4], 3, [])
