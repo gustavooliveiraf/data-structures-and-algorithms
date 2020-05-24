@@ -15,7 +15,7 @@ class Node {
   }
 }
 
-class BTree {
+class Trie {
   insert(root, key) {
     let pointer = root;
     const { length } = key;
@@ -61,7 +61,7 @@ function main(queries) {
   let index = 0;
   let n = queries[index++];
   const root = new Node();
-  const bTree = new BTree();
+  const bTree = new Trie();
 
   for (let i = 0; i < n; i++) {
     const operation = queries[index++];
