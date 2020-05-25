@@ -2,37 +2,30 @@
 let mem;
 
 function knapsack(list, i, k) {
-  if (mem[i][k] !== undefined) return mem[i][k];
+  if (mem[i][k] !== undefined)
+    return mem[i][k];
 
-  if (i === list.length)
-    return mem[i][k] = 0;
   if (list[i] > k)
     return mem[i][k] = knapsack(list, i + 1, k);
-  
-  const temp1 = list[i] + knapsack(list, i, k - list[i]);
-  const temp2 = knapsack(list, i + 1, k);
 
-  return mem[i][k] = Math.max(temp1, temp2);
+  return mem[i][k] = Math.max(knapsack(list, i + 1, k),
+    list[i] + knapsack(list, i, k - list[i]));
 }
 
 function buildArrayMemorization(n, c) {
-  count = 0;
   mem = new Array(n + 1).fill(null);
   mem.forEach((elem, index) => mem[index] = new Array(c + 1))
   mem[n].fill(0);
 }
 
 function main(processedInput) {
-  let index = 0;
+  let currentLine = 0;
 
-  const cases = processedInput[index++];
+  const cases = Number(processedInput[currentLine++]);
   for (let i = 0; i < cases; i++) {
-    const n = processedInput[index++];
-    const k = processedInput[index++];
+    const [n, k] = processedInput[currentLine++].split(' ').map(Number);
 
-    const list = new Array();
-    for (let j = 0; j < n; j++)
-      list.push(processedInput[index++]);
+    const list = processedInput[currentLine++].split(' ').map(Number);
 
     buildArrayMemorization(n, k);
     console.log(knapsack(list, 0, k));
@@ -40,7 +33,7 @@ function main(processedInput) {
 }
 
 function processInput(input) {
-  const processedInput = input.replace(/\n/g, ' ').split(' ').map(elem => parseInt(elem));
+  const processedInput = input.split('\n');
 
   return main(processedInput);
 }

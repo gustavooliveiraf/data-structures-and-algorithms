@@ -24,4 +24,4 @@ function allSubsetsVersion2(n, i, partial) {
 }
 
 // allSubsetsVersion1([1, 2, 3, 4], [], 0)
-allSubsetsVersion2([1, 2, 3, 4], 3, [])
+allSubsetsVersion2('casa', 3, '')
