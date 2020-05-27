@@ -1,5 +1,5 @@
-let mem, sum;
-let n;
+// https://www.hackerrank.com/challenges/play-game
+let mem, n;
 
 function loopSum(arr, index) {
   let count = 0;
@@ -9,17 +9,19 @@ function loopSum(arr, index) {
 }
 
 function bricksGame(arr, i, turn_1) {
-  if (i >= (n - 3) && !turn_1) return 0;
-  if (i >= (n - 3)) return loopSum(arr, i)
+  if (mem[i] !== undefined)
+    return mem[i];
+  if (i >= (n - 3))
+    return mem[i] = loopSum(arr, i);
 
   let count = arr[i];
-  const remove_1 = bricksGame(arr, i + 1, !turn_1) + (turn_1 ? count : 0);
+  const remove_1 = count + bricksGame(arr, i + 2);
   count += arr[i + 1]
-  const remove_2 = bricksGame(arr, i + 2, !turn_1) + (turn_1 ? count : 0);
+  const remove_2 = count + bricksGame(arr, i + 3);
   count += arr[i + 2];
-  const remove_3 = bricksGame(arr, i + 3, !turn_1) + (turn_1 ? count : 0);
+  const remove_3 = count + bricksGame(arr, i + 4);
 
-  return Math.max(remove_1, remove_2, remove_3);
+  return mem[i] = Math.max(remove_1, remove_2, remove_3);
 }
 
 function main(input) {
@@ -28,11 +30,11 @@ function main(input) {
   const cases = Number(input[index++]);
   for (let i = 0; i < cases; i++) {
     n = Number(input[index++]);
-    const arr = input[index++].trim().split(' ').map(Number);
+    const list = input[index++].trim().split(' ').map(Number);
     mem = new Array(n + 1);
     mem[n] = 0;
 
-    console.log(bricksGame(arr, 0, true));
+    console.log(bricksGame(list, 0));
   }
 }
 
@@ -42,6 +44,8 @@ function processInput(input) {
   return main(processedInput);
 }
 
-processInput(`1
+processInput(`2
+5
+999 1 1 1 0
 5
 0 1 1 1 999`)
