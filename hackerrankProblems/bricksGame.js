@@ -8,7 +8,7 @@ function loopSum(arr, index) {
   return mem[index] = count;
 }
 
-function bricksGame(arr, i, turn_1) {
+function bricksGame(arr, i) {
   if (mem[i] !== undefined)
     return mem[i];
   if (i >= (n - 3))
