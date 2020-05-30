@@ -5,7 +5,9 @@ function processInput(input) {
   //   .map(elem => elem.split(' ').map(elem => parseInt(elem)))
   //   .reduce((acc, val) => acc.concat(val), []);
 
-  const processedInput = input.trim().replace(/\n/g, ' ').split(' ').map(Number);
+  // const processedInput = input.trim().replace(/\n/g, ' ').split(' ').map(Number);
+
+  const processedInput = input.trim().split('\n');
 
   return main(processedInput);
 }
