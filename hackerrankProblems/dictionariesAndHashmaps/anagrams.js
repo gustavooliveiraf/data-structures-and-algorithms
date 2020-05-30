@@ -1,4 +1,4 @@
-// https://www.hackerrank.com/challenges/crush
+// https://www.hackerrank.com/challenges/anagram/problem
 function anagrams(str_1, str_2) {
   const { length } = str_1;
   const map = new Map();
