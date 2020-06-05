@@ -1,40 +1,40 @@
 // https://www.hackerrank.com/challenges/play-game
-let mem, n;
 
-function loopSum(arr, index) {
-  let count = 0;
-  for (let i = index; i < n; i++) count += arr[i];
+// let arr, mem, sum;
+// function bricksGame(n) {
+//   if (mem[n] !== undefined)
+//     return mem[n]
 
-  return mem[index] = count;
-}
+//   return mem[n] = sum[n] - Math.min(bricksGame(n - 1), bricksGame(n - 2), bricksGame(n - 3))
+// }
 
-function bricksGame(arr, i) {
-  if (mem[i] !== undefined)
-    return mem[i];
-  if (i >= (n - 3))
-    return mem[i] = loopSum(arr, i);
+function bricksGame(arr, n) {
+  if (n <= 3)
+    return arr.reduce((a, b) => a + b);
+  
+  const mem = new Array(n);
+  mem[0] = arr[0];
+  mem[1] = mem[0] + arr[1];
+  mem[2] = mem[1] + arr[2];
 
-  let count = arr[i];
-  const remove_1 = count + bricksGame(arr, i + 2);
-  count += arr[i + 1]
-  const remove_2 = count + bricksGame(arr, i + 3);
-  count += arr[i + 2];
-  const remove_3 = count + bricksGame(arr, i + 4);
+  let sum = mem[2];
+  for (let i = 3; i < n; i++) {
+      sum += arr[i];
+      mem[i] = sum - Math.min(mem[i - 1], mem[i - 2], mem[i - 3]);
+  }
 
-  return mem[i] = Math.max(remove_1, remove_2, remove_3);
+  return mem[n - 1];
 }
 
 function main(input) {
-  let index = 0;
+  let currenteLine = 0;
 
-  const cases = Number(input[index++]);
+  const cases = Number(input[currenteLine++]);
   for (let i = 0; i < cases; i++) {
-    n = Number(input[index++]);
-    const list = input[index++].trim().split(' ').map(Number);
-    mem = new Array(n + 1);
-    mem[n] = 0;
+    const n = Number(input[currenteLine++]);
+    arr = input[currenteLine++].trim().split(' ').map(Number);
 
-    console.log(bricksGame(list, 0));
+    console.log(bricksGame(arr.reverse(), n));
   }
 }
 
