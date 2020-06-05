@@ -1,7 +1,7 @@
 function processInput(input) {
   const processedInput = input.trim().split('\n');
 
-  return main(processedInput);
+  main(processedInput);
 }
 
 process.stdin.resume();
