@@ -9,7 +9,7 @@ class Heap {
   constructor(heap = []) {
     this.heap = heap;
 
-    if (!this.empty()) this.buildMinHeap();
+    if (!this.empty()) this.buildMaxHeap();
   }
 
   parent(i) { return parseInt((i - 1) / 2); }
@@ -37,7 +37,7 @@ class Heap {
   }
 
   pop() {
-    if (this.emepty()) return null;
+    if (this.empty()) return null;
 
     const temp = this.heap[0];
     this.heap[0] = this.heap[this.size() - 1];
@@ -45,6 +45,10 @@ class Heap {
     this.maxHeapify(0);
 
     return temp;
+  }
+
+  top() {
+    return this.heap[0];
   }
 
   maxHeapify(i, heapSize = this.size()) {
@@ -60,7 +64,7 @@ class Heap {
     }
   }
 
-  buildMinHeap() {
+  buildMaxHeap() {
     for (let i = parseInt(this.size() / 2); i >= 0; i--)
       this.maxHeapify(i);
   }
