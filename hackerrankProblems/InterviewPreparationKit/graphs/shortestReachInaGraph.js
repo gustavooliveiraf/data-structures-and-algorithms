@@ -51,7 +51,9 @@ class GraphNode {
 class Graph {
   constructor(size) {
     this.adjList = new Array(size);
-    for (let i = 0; i < size; i++) this.adjList[i] = new Array();
+
+    for (let i = 0; i < size; i++)
+      this.adjList[i] = new Array();
   }
 
   addEdge(fromNode, toNode) {
