@@ -1,7 +1,7 @@
-# Hackerrank Badges - Gold Level
+# Hackerrank
+Personal solutions to Hackerrank problems
 
-## Perfil
-![criando usuário](https://i.ibb.co/0nnXGC4/Screenshot-from-2020-06-04-23-51-26.png)
+## Badge by solving challenges in the Algorithms and Data Structures tracks
+![criando usuário](https://i.ibb.co/PgrWLS5/Screenshot-from-2020-06-04-23-35-59.png)
 
-## Gold badge earned
-![criando usuário](https://i.ibb.co/PgrWLS5/Screenshot-from-2020-06-04-23-35-59.png) 
+[`Personal Homepage: https://www.hackerrank.com/gustavooliveira`](https://www.hackerrank.com/gustavooliveira)
