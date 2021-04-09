@@ -1,3 +1,4 @@
+; https://www.hackerrank.com/challenges/jumping-on-the-clouds
 (defn return [jumps index length]
   (if (= index length)
     jumps

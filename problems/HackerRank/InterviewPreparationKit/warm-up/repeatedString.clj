@@ -1,3 +1,4 @@
+; https://www.hackerrank.com/challenges/repeated-string
 (defn countInt [s n]
   (* (long (/ n (count s))) ((frequencies s) \a 0)))
 

@@ -1,3 +1,4 @@
+; https://www.hackerrank.com/challenges/counting-valleys
 (def mapLevel {\U 1 \D -1})
 
 (defn checkValley [elem level valleys]
