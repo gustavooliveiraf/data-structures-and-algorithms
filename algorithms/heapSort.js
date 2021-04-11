@@ -6,7 +6,7 @@ const heapSort = (array) => {
 
   for (let i = heap.size() - 1, j = 1; i >= 1; i--, j++) {
     [array[0], array[i]] = [array[i], array[0]];
-    heap.maxHeapify(0, heap.size() - j);
+    heap.heapify(0, heap.size() - j);
   }
 
   return heap.heap;
