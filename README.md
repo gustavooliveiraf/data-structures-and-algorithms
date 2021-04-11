@@ -1,7 +1,8 @@
 # Hackerrank
-Personal solutions to Hackerrank problems
+Personal solutions to Hackerrank problems - [`Homepage`](https://www.hackerrank.com/gustavooliveiraf)
 
-## Badge by solving challenges in the Algorithms and Data Structures tracks
-![criando usuário](https://i.ibb.co/PgrWLS5/Screenshot-from-2020-06-04-23-35-59.png)
+## Problem Solving Certificate
+![Problem Solving Certificate](https://i.ibb.co/b1TfLWH/download.png)
 
-[`Personal Homepage: https://www.hackerrank.com/gustavooliveiraf`](https://www.hackerrank.com/gustavooliveiraf)
+## Gold level badge by solving challenges in the Algorithms and Data Structures tracks
+![Gold level badge](https://i.ibb.co/PgrWLS5/Screenshot-from-2020-06-04-23-35-59.png)
