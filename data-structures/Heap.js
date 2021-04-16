@@ -27,7 +27,7 @@ class Heap {
     this.heap.push(weight);
     
     let i = this.size() - 1;
-    while (i !== 0 && this.compare(this.heap[this.parent(i)], this.heap[i])) {
+    while (i !== 0 && this.compare(this.heap[i], this.heap[this.parent(i)])) {
       [this.heap[i], this.heap[this.parent(i)]] = [this.heap[this.parent(i)], this.heap[i]];
       i = this.parent(i);
     }
