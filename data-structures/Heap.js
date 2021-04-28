@@ -1,19 +1,15 @@
 // https://www.thehuxley.com/problem/578
 class Heap {
-  constructor(heap = [], compare = 'maxHeap') {
-    this.heap = heap;
+  constructor(array = [], compare = 'maxHeap') {
+    this.array = array;
     this.compare = compare === 'maxHeap' ? this.max : this.min;
 
-    if (!this.empty()) this.heapify();
+    if (!this.empty()) this.buildHeap();
   }
 
   parent(i) { return parseInt((i - 1) / 2); }
 
-  left(i) { return 2 * i + 1; }
-
-  right(i) { return 2 * i + 2 }
-
-  size() { return this.heap.length; }
+  size() { return this.array.length; }
 
   empty() { return this.size() === 0; }
 
@@ -21,14 +17,14 @@ class Heap {
 
   max(a, b) { return a > b }
 
-  top() { return this.heap[0]; }
+  top() { return this.array[0]; }
 
   push(weight) {
-    this.heap.push(weight);
-    
+    this.array.push(weight);
+
     let i = this.size() - 1;
-    while (i !== 0 && this.compare(this.heap[i], this.heap[this.parent(i)])) {
-      [this.heap[i], this.heap[this.parent(i)]] = [this.heap[this.parent(i)], this.heap[i]];
+    while (i !== 0 && this.compare(this.array[i], this.array[this.parent(i)])) {
+      [this.array[i], this.array[this.parent(i)]] = [this.array[this.parent(i)], this.array[i]];
       i = this.parent(i);
     }
   }
@@ -36,23 +32,23 @@ class Heap {
   pop() {
     if (this.empty()) return null;
 
-    const temp = this.heap[0];
-    this.heap[0] = this.heap[this.size() - 1];
-    this.heap.pop();
+    const temp = this.array[0];
+    this.array[0] = this.array[this.size() - 1];
+    this.array.pop();
     this.heapify(0);
 
     return temp;
   }
 
   heapify(i, heapSize = this.size()) {
-    const l = this.left(i);
-    const r = this.right(i);
+    const left = 2 * i + 1;
+    const right = left + 1;
 
-    let comp = (l < heapSize && this.compare(this.heap[l], this.heap[i])) ? l : i;
-    if (r < heapSize && this.compare(this.heap[r], this.heap[comp])) comp = r;
+    let comp = (left < heapSize && this.compare(this.array[left], this.array[i])) ? left : i;
+    if (right < heapSize && this.compare(this.array[right], this.array[comp])) comp = right;
   
     if (comp !== i) {
-      [this.heap[i], this.heap[comp]] = [this.heap[comp], this.heap[i]];
+      [this.array[i], this.array[comp]] = [this.array[comp], this.array[i]];
       this.heapify(comp, heapSize);
     }
   }
