@@ -1,4 +1,4 @@
-class UnionFind {
+class DisjointSet {
   constructor(size) {
     this.parent = new Array(size);
     this.rank   = new Array(size);
