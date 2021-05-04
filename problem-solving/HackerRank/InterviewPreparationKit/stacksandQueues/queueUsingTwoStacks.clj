@@ -2,18 +2,18 @@
 ; (def fptr "local-test.txt")
 (def fptr (get (System/getenv) "OUTPUT_PATH"))
 
-(defn print-peek [string stack stack-print]
-  (spit fptr (str string "\n") :append true)
-  [stack stack-print])
+(defn build-stack-print [stack stack-print]
+  (if (empty? stack-print)
+    ['() (reverse stack)]
+    [stack stack-print]))
 
 (defn peek-stack [stack stack-print]
-  (if (empty? stack-print)
-    (print-peek (last stack) '() (reverse stack))
-    (print-peek (first stack-print) stack stack-print)))
+  (let [[stack stack-print] (build-stack-print stack stack-print)]
+    (spit fptr (str (first stack-print) "\n") :append true)
+    [stack stack-print]))
 
 (defn pop-stack [stack stack-print]
-  (if (empty? stack-print)
-    ['() (pop (reverse stack))]
+  (let [[stack stack-print] (build-stack-print stack stack-print)]
     [stack (pop stack-print)]))
 
 (defn queueUsingTwoStacks [queries]
