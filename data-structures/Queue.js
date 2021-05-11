@@ -1,40 +1,40 @@
+// https://www.hackerrank.com/interview/interview-preparation-kit/linked-lists/challenges
 class QueueNode {
-  constructor(index) {
-    this.index = index;
+  constructor(data) {
+    this.data = data;
     this.next = null;
   }
 }
 
 class Queue {
   constructor() {
-    this.front = null;
-    this.rear = null;
+    this.head = null;
+    this.tail = null;
   }
 
   isEmpty() {
-    return this.front === null;
+    return this.head === null;
   }
 
-  push(item) {
-    const temp = new QueueNode(item);
-    
-    if (this.rear === null) {
-      this.front = this.rear = temp;
-      return;
-    }
+  push(data) {
+    const newNode = new QueueNode(data);
 
-    this.rear.next = temp;
-    this.rear = temp;
+    if (this.head == null)
+      this.head = newNode;
+    else
+      this.tail.next = newNode;
+
+    this.tail = newNode;
   }
 
   pop() {
     if (this.isEmpty()) return null;
 
-    const temp = this.front;
-    this.front = temp.next;
+    const oldNode = this.head;
+    this.head = oldNode.next;
 
-    if (this.front === null) this.rear = null;
+    if (this.head === null) this.tail = null;
 
-    return temp;
+    return oldNode;
   }
 }
