@@ -3,10 +3,13 @@ class DisjointSet {
     this.parent = new Array(size);
     this.rank   = new Array(size);
 
-    for (let i = 0; i < size; i++) {
-      this.parent[i] = i;
-      this.rank[i]   = 0;
-    }
+    for (let i = 0; i < size; i++)
+      this.makeSet(i);
+  }
+
+  makeSet(i) {
+    this.parent[i] = i;
+    this.rank[i]   = 0;
   }
 
   find(i) {

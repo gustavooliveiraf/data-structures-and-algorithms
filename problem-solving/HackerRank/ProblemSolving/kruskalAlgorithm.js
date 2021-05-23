@@ -1,14 +1,17 @@
-// https://www.hackerrank.com/challenges/kruskalmstrsub/problem?h_r=internal-search
+// https://www.hackerrank.com/challenges/kruskalmstrsub
 
-class UnionFind {
+class DisjointSet {
   constructor(size) {
     this.parent = new Array(size);
     this.rank   = new Array(size);
 
-    for (let i = 0; i < size; i++) {
-      this.parent[i] = i;
-      this.rank[i]   = 0;
-    }
+    for (let i = 0; i < size; i++)
+      this.makeSet(i);
+  }
+
+  makeSet(i) {
+    this.parent[i] = i;
+    this.rank[i]   = 0;
   }
 
   find(i) {
@@ -65,7 +68,7 @@ class Graph {
 function kruskal(graph) {
   const edges = graph.sort();
 
-  const unionFind = new UnionFind(graph.e);
+  const unionFind = new DisjointSet(graph.e);
   let totalWeight = 0;
 
   let e = 0;
