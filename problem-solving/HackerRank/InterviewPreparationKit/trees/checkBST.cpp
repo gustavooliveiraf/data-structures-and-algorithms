@@ -9,8 +9,7 @@ bool checkBSTUtil(Node* root, int min, int max) {
   if (root->data <= min || root->data >= max)
     return false;
 
-  return checkBSTUtil(root->left, min, root->data) &&
-    checkBSTUtil(root->right, root->data, max);
+  return checkBSTUtil(root->left, min, root->data) && checkBSTUtil(root->right, root->data, max);
 }
 
 bool checkBST(Node* root) {
