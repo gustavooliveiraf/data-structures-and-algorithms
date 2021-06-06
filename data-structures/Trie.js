@@ -1,12 +1,25 @@
+function charToIndex(char) {
+  return char.charCodeAt() - 97;
+}
+
+function indexToChar(index) {
+  return String.fromCharCode(index + 97);
+}
+
 class Node {
   constructor() {
     this.children = new Array(26);
+    this.isEndOfWord = false;
   }
 }
 
 class Trie {
-  insert(root, key) {
-    let pointer = root;
+  constructor () {
+    this.root = new Node()
+  }
+
+  insert(key) {
+    let pointer = this.root;
     const { length } = key;
 
     for (let i = 0; i < length; i++) {
@@ -16,10 +29,12 @@ class Trie {
 
       pointer = pointer.children[index];
     }
+
+    pointer.isEndOfWord = true;
   }
 
-  search(root, key) {
-    let pointer = root;
+  search(key) {
+    let pointer = this.root;
     const { length } = key;
 
     for (let i = 0; i < length; i++) {
