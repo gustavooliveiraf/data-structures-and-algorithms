@@ -2,14 +2,14 @@ class DisjointSet {
   constructor(size) {
     this.parent = new Array(size);
     this.rank   = new Array(size);
-
-    for (let i = 0; i < size; i++)
-      this.makeSet(i);
+    this.makeSet(size);
   }
 
-  makeSet(i) {
-    this.parent[i] = i;
-    this.rank[i]   = 0;
+  makeSet(size) {
+    for (let i = 0; i < size; i++) {
+      this.parent[i] = i;
+      this.rank[i]   = 0;
+    }
   }
 
   find(i) {
