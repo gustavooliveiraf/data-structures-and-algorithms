@@ -1,6 +1,7 @@
+/* Stack with Linked List */
 class StackNode {
-  constructor(index) {
-    this.index = index;
+  constructor(data) {
+    this.data = data;
     this.next = null;
   }
 }
@@ -12,6 +13,12 @@ class Stack {
 
   isEmpty() {
     return this.front === null;
+  }
+
+  top() {
+    if (this.isEmpty()) return null;
+
+    return this.front.data;
   }
 
   push(item) {
@@ -27,6 +34,31 @@ class Stack {
     const front = this.front;
     this.front = front.next;
 
-    return front.index;
+    return front.data;
+  }
+}
+
+/* Stack with Array */
+class Stack {
+  constructor() {
+    this.stack = new Array();
+  }
+
+  isEmpty() {
+    return this.stack.length === 0;
+  }
+
+  top() {
+    return this.stack[this.stack.length - 1];
+  }
+
+  push(data) {
+    this.stack.push(data);
+  }
+
+  pop() {
+    if (this.isEmpty()) return null;
+
+    return this.stack.pop();
   }
 }
