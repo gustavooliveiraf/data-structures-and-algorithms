@@ -8,7 +8,7 @@ class Node {
 
 class Heap {
   constructor() {
-    this.heap = [];
+    this.heap = new Array();
   }
 
   parent(i) { return (i - 1) >> 1; }
@@ -52,11 +52,6 @@ class Heap {
     }
   }
 
-  buildHeap() {
-    for (let i = this.size() >> 1; i >= 0; i--)
-      this.heapify(i);
-  }
-
   toArrayNum() {
     return this.heap.map(node => node.num);
   }
@@ -71,8 +66,7 @@ var topKFrequent = function(nums, k) {
     if (heap.size() < k) {
       heap.push(key, value);
     } else {
-      const { num, freq } = heap.top();
-      if (value > freq) {
+      if (value > heap.top().freq) {
         heap.pop();
         heap.push(key, value);
       }
