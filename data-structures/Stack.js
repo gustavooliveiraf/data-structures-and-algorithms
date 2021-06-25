@@ -1,5 +1,5 @@
 /* Stack with Linked List */
-class StackNode {
+class Node {
   constructor(data) {
     this.data = data;
     this.next = null;
@@ -21,8 +21,8 @@ class Stack {
     return this.front.data;
   }
 
-  push(item) {
-    const newFront = new StackNode(item);
+  push(data) {
+    const newFront = new Node(data);
     newFront.next = this.front;
 
     this.front = newFront;
