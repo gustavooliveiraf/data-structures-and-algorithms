@@ -17,7 +17,7 @@ class Heap {
     this.heap = heap;
   }
 
-  parent(i) { return parseInt((i - 1) / 2); }
+  parent(i) { return (i - 1) >> 1; }
 
   left(i) { return 2 * i + 1; }
 

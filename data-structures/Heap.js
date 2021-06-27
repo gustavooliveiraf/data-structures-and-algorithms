@@ -7,7 +7,7 @@ class Heap {
     if (!this.empty()) this.buildHeap();
   }
 
-  parent(i) { return parseInt((i - 1) / 2); }
+  parent(i) { return (i - 1) >> 1; }
 
   size() { return this.array.length; }
 
@@ -54,7 +54,7 @@ class Heap {
   }
 
   buildHeap() {
-    for (let i = parseInt(this.size() / 2); i >= 0; i--)
+    for (let i = this.size() >> 1; i >= 0; i--)
       this.heapify(i);
   }
 }

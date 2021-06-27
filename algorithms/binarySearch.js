@@ -3,7 +3,7 @@ function binarySearch(arr, x) {
   let r = arr.length - 1;
 
   while (l <= r) {
-    const mid = Math.floor((l + r) / 2);
+    const mid = (l + r) >> 1;
 
     if (arr[mid] === x) return mid;
     else if (arr[mid] > x) r = mid - 1;
@@ -18,7 +18,7 @@ function binarySearchLowerBound(arr, x) {
   let r = arr.length;
 
   while (l < r) {
-    const mid = Math.floor((l + r) / 2);
+    const mid = (l + r) >> 1;
 
     if (x <= arr[mid]) r = mid;
     else l = mid + 1;
@@ -32,7 +32,7 @@ function binarySearchUpperBound(arr, x) {
   let r = arr.length;
 
   while (l < r) {
-    const mid = Math.floor((l + r) / 2);
+    const mid = (l + r) >> 1;
 
     if (x >= arr[mid]) l = mid + 1;
     else r = mid;
