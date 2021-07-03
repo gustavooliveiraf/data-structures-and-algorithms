@@ -23,9 +23,11 @@ class DisjointSet {
     const xroot = this.find(x);
     const yroot = this.find(y);
 
-    if(this.rank[xroot] > this.rank[yroot])
+    if (xroot === yroot) return;
+
+    if (this.rank[xroot] > this.rank[yroot])
       this.parent[yroot] = xroot;
-    else if(this.rank[xroot] < this.rank[yroot])
+    else if (this.rank[xroot] < this.rank[yroot])
       this.parent[xroot] = yroot;
     else {
       this.parent[yroot] = xroot;
