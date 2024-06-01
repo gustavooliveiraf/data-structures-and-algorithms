@@ -1,6 +1,7 @@
-problem-solving/HackerRank/Amazon
-problem-solving/Codility/Microsoft
-problem-solving/HackerRank/Uber
-problem-solving/Codility/Google
 .vscode
-test*
+
+Amazon/*
+Microsoft/*
+Uber/*
+Google/*
+Brex/*
