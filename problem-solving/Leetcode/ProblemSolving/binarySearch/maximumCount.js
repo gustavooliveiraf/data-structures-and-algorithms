@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/
+// https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer
 function findUpperBound(nums, target) {
   let left = 0, right = nums.length - 1;
   let result = null;
@@ -7,10 +7,10 @@ function findUpperBound(nums, target) {
     const mid = (left + right) >> 1;
 
     if (nums[mid] <= target) {
-      left++;
+      left = mid + 1;
     } else {
       result = mid;
-      right--;
+      right = mid - 1;
     }
   }
 
