@@ -1,4 +1,4 @@
-function binarySearch(arr, x) {
+function find(arr, x) {
   let l = 0;
   let r = arr.length - 1;
 
@@ -13,35 +13,43 @@ function binarySearch(arr, x) {
   return -1;
 }
 
-function binarySearchLowerBound(arr, x) {
-  let l = 0;
-  let r = arr.length;
+function findUpperBound(nums, target) {
+  let left = 0, right = nums.length - 1;
+  let result = -1;
 
-  while (l < r) {
-    const mid = (l + r) >> 1;
+  while (left <= right) {
+    const mid = (left + right) >> 1;
 
-    if (x <= arr[mid]) r = mid;
-    else l = mid + 1;
+    if (nums[mid] <= target) {
+      left++;
+    } else {
+      result = mid;
+      right--;
+    }
   }
 
-  return l;
+  return result;
 }
 
-function binarySearchUpperBound(arr, x) {
-  let l = 0;
-  let r = arr.length;
+function findLowerBound(nums, target) {
+  let left = 0, right = nums.length - 1;
+  let result = -1;
 
-  while (l < r) {
-    const mid = (l + r) >> 1;
+  while (left <= right) {
+    const mid = (left + right) >> 1;
 
-    if (x >= arr[mid]) l = mid + 1;
-    else r = mid;
+    if (nums[mid] >= target) {
+      right--;
+    } else {
+      result = mid;
+      left++;
+    }
   }
 
-  return l;
+  return result;
 }
 
 const arr = [10, 10, 10, 20, 20, 20, 30, 30];
-console.log(binarySearch(arr, 20));
-console.log(binarySearchLowerBound(arr, 20));
-console.log(binarySearchUpperBound(arr, 20));
+console.log(find(arr, 20));
+console.log(findUpperBound(arr, 20));
+console.log(findLowerBound(arr, 20));
