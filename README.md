@@ -1,8 +1,11 @@
-# HackerRank
-Personal solutions to HackerRank problems - [`Homepage`](https://www.hackerrank.com/gustavooliveiraf)
+# Data Structures & Algorithms
 
-## Problem Solving Certificate
-![Problem Solving Certificate](https://i.ibb.co/b1TfLWH/download.png)
+Personal problem solving for [HackerRank](https://www.hackerrank.com/gustavooliveiraf), [LeetCode](https://leetcode.com/u/gustavooliveiraf/), [NeetCode](https://neetcode.io/roadmap) platforms.
 
-## Gold Level Badge by solving challenges in the Algorithms and Data Structures tracks
+## HackerRank Problem Solving Certificate
+
+![Problem Solving Certificate](https://i.postimg.cc/DwzMBN1s/download-1.png)
+
+## HackerRank Gold Level Badge by solving challenges in the Algorithms and Data Structures tracks
+
 ![Gold level badge](https://i.ibb.co/PgrWLS5/Screenshot-from-2020-06-04-23-35-59.png)
