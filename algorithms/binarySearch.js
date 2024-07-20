@@ -13,6 +13,7 @@ function find(arr, x) {
   return -1;
 }
 
+// find the smallest element that is strictly greater than target
 function findUpperBound(nums, target) {
   let left = 0, right = nums.length - 1;
   let result = -1;
@@ -31,6 +32,7 @@ function findUpperBound(nums, target) {
   return result;
 }
 
+// find the first element greater than or equal than target
 function findLowerBound(nums, target) {
   let left = 0, right = nums.length - 1;
   let result = -1;
@@ -46,7 +48,11 @@ function findLowerBound(nums, target) {
     }
   }
 
-  return result;
+  // the result index stores the index that contains the greatest
+  // element that is strictly smaller than target, but for
+  // lower bound we need the value just greater than or equal
+  // to target hence we return result+1 index and not result.
+  return result + 1;
 }
 
 const arr = [10, 10, 10, 20, 20, 20, 30, 30];
