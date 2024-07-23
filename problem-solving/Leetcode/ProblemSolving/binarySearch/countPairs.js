@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target
-function findLowerBound(nums, left = 0, bsTarget) {
+function findLowerBound(nums, bsTarget, left = 0) {
   let right = nums.length - 1;
   let result = left - 1;
 
@@ -27,7 +27,7 @@ var countPairs = function(nums, target) {
 
   let count = 0;
   for (let i = 0; i < nums.length - 1; i++) {
-    const greatestIndexSmallerThanBSTarget = findLowerBound(nums, i + 1, target - nums[i]);
+    const greatestIndexSmallerThanBSTarget = findLowerBound(nums, target - nums[i], i + 1);
 
     count += greatestIndexSmallerThanBSTarget - i;
   }
