@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/merge-sorted-array/description/
-
 /**
  * @param {number[]} nums1
  * @param {number} m
