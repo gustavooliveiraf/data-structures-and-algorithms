@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/pascals-triangle
 /**
  * @param {number} numRows
  * @return {number[][]}
@@ -14,6 +15,25 @@ var generate = function(numRows) {
 
     pascalTriangle.push(thisRow);
   }
+
+  return pascalTriangle;
+};
+
+var generateRecursive = function(numRows) {
+  if (numRows === 1) {
+    return [[1]];
+  }
+  let pascalTriangle = generate(numRows - 1);
+
+  const thisRow = new Array(numRows);
+  thisRow[0] = thisRow[numRows - 1] = 1;
+
+  numRows--;
+  for (let i = 1; i < numRows; i++) {
+    thisRow[i] = pascalTriangle[numRows - 1][i - 1] + pascalTriangle[numRows - 1][i];
+  }
+
+  pascalTriangle.push(thisRow);
 
   return pascalTriangle;
 };
