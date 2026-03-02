@@ -1,43 +1,46 @@
 class Solution {
-  dfs(grid, i, j) {
-    if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
-      return 0;
-    } else if (grid[i][j] === 0) {
-      return 0;
+  dfs(grid, i, j, directions) {
+    if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] === '0') {
+      return;
     }
 
-    grid[i][j] = 0;
+    grid[i][j] = '0';
 
-    return 1 +
-      this.dfs(grid, i + 1, j) +
-      this.dfs(grid, i - 1, j) +
-      this.dfs(grid, i, j + 1) +
-      this.dfs(grid, i, j - 1);
+    for (const [x, y] of directions) {
+      this.dfs(grid, i + x, j + y, directions);
+    }
   }
 
   /**
-   * @param {number[][]} grid
+   * @param {character[][]} grid
    * @return {number}
    */
-  maxAreaOfIsland(grid) {
-    let maximumArea = 0;
+  numIslands(grid) {
+    let islandCounter = 0;
+    const directions = [
+      [1, 0],
+      [-1, 0],
+      [0, -1],
+      [0, 1]
+    ];
+
     for (let i = 0; i < grid.length; i++) {
-      for (let j = 0; j < grid[0].length; j++) {
-        if (grid[i][j] === 1) {
-          const maximumLocal = this.dfs(grid, i, j);
-          maximumArea = Math.max(maximumArea, maximumLocal);
+      for (let j = 0; j < grid[i].length; j++) {
+        if (grid[i][j] === '1') {
+          this.dfs(grid, i, j, directions);
+          islandCounter++;
         }
       }
     }
 
-    return maximumArea;
+    return islandCounter;
   }
 }
 
 const grid = [
-  [0,1,1,0,1],
-  [1,0,1,0,1],
-  [0,1,1,0,1],
-  [0,1,0,0,1]
+  ['0','1','1','0','1'],
+  ['1','0','1','0','1'],
+  ['0','1','1','0','1'],
+  ['0','1','0','0','1']
 ];
-console.log(new Solution().maxAreaOfIsland(grid));
+console.log(new Solution().numIslands(grid));
