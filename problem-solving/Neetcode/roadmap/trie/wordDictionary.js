@@ -1,17 +1,13 @@
-function toIndex(char) {
-  return char.charCodeAt() - 'a'.charCodeAt();
-}
-
-class Node {
-  constructor(){
-      this.children = new Array(26).fill(null);
-      this.isWord = false;
+class TrieNode {
+  constructor() {
+    this.children = new Array(26).fill(null);
+    this.isWord   = false;
   }
 }
 
 class WordDictionary {
   constructor() {
-    this.root = new Node();
+    this.root = new TrieNode();
   }
 
   /**
@@ -20,12 +16,13 @@ class WordDictionary {
    */
   addWord(word) {
     let pointer = this.root;
-    for (let char of word) {
-      const child = pointer.children[toIndex(char)] || new Node();
+    for (const char of word) {
+      const index = char.charCodeAt(0) - 'a'.charCodeAt(0);
+      if (pointer.children[index] === null) {
+        pointer.children[index] = new TrieNode();
+      }
 
-      pointer.children[toIndex(char)] = child;
-
-      pointer = child;
+      pointer = pointer.children[index];
     }
 
     pointer.isWord = true;
@@ -35,35 +32,29 @@ class WordDictionary {
    * @param {string} word
    * @return {boolean}
    */
-  search(word) {
-    return this.dfs(word, 0, this.root);
-  }
-
-  dfs(word, index, pointer) {
-    if (word.length === index) {
-      return pointer.isWord;
-    }
-    if (word[index] === '.') {
-      return this.wildCard(word, index, pointer);
-    }
-    if (!pointer.children[toIndex(word[index])]) {
-      return false;
-    }
-
-    return this.dfs(word, index + 1, pointer.children[toIndex(word[index])])
-  }
-
-  wildCard(word, index, pointer) {
-    for (let child of pointer.children) {
-      if (child) {
-        const result = this.dfs(word, index + 1, child);
-        if (result) {
-          return true;
+  search(word, pointer = this.root, wordIndex = 0) {
+    for (let i = wordIndex; i < word.length; i++) {
+      if (word[i] !== '.') {
+        const index = word[i].charCodeAt(0) - 'a'.charCodeAt(0);
+        if (pointer.children[index] === null) {
+          return false;
         }
+
+        pointer = pointer.children[index];
+      } else {
+        for (let j = 0; j < 26; j++) {
+          if (pointer.children[j]) {
+            if (this.search(word, pointer.children[j], i + 1)) {
+              return true;
+            }
+          }
+        }
+
+        return false;
       }
     }
 
-    return false;
+    return pointer.isWord;
   }
 }
 
