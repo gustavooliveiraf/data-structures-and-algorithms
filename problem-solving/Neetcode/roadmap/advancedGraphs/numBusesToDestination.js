@@ -30,6 +30,7 @@ class Solution {
     const { adjList } = new Graph(routes);
     const visitedBuses = new Set([source]);
     const visitedRoutes = new Set();
+    const routesSet = routes.map(route => new Set(route));
     const queue = [...(adjList.get(source) || [])];
     let numberOfBuses = 0;
 
@@ -42,11 +43,11 @@ class Solution {
 
         visitedRoutes.add(routeIndex);
 
-        if (routes[routeIndex].find(elem => elem === target) !== undefined) {
+        if (routesSet[routeIndex].has(target)) {
           return numberOfBuses + 1;
         }
 
-        for (const bus of routes[routeIndex]) {
+        for (const bus of routesSet[routeIndex]) {
           if (!visitedBuses.has(bus) && adjList.get(bus)) {
             visitedBuses.add(bus);
 
