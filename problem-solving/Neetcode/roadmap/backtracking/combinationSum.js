@@ -1,37 +1,24 @@
 class Solution {
-  constructor() {
-    this.nums
-    this.target
-    this.subset = new Array()
-    this.result = new Array()
-  }
-  dfs(index, sum) {
-    if (sum > this.target || index === this.nums.length) {
-      return;
-    } else if (sum === this.target) {
-      this.result.push([...this.subset]);
-      return;
-    }
-
-    this.subset.push(this.nums[index]);
-    this.dfs(index, sum + this.nums[index]);
-
-    this.subset.pop();
-    this.dfs(index + 1, sum);
-  }
   /**
    * @param {number[]} nums
    * @param {number} target
    * @returns {number[][]}
    */
-  combinationSum(nums, target) {
-    this.nums = nums;
-    this.target = target;
-    this.dfs(0, 0);
+  combinationSum(nums, target, index = 0, subarr = [], res = []) {
+    if (target === 0) {
+      return res.push([...subarr]);
+    } else if (target < 0 || index === nums.length) {
+      return;
+    }
 
-    return this.result;
+    subarr.push(nums[index]);
+    this.combinationSum(nums, target - nums[index], index, subarr, res);
+    subarr.pop();
+    this.combinationSum(nums, target, index + 1, subarr, res);
+
+    return res;
   }
 }
 
-const nums = [3,4,5], target = 16;
+const nums = [2,5,6,9], target = 9;
 console.log(new Solution().combinationSum(nums, target));

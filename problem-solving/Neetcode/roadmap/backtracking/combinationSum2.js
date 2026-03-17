@@ -1,45 +1,28 @@
 class Solution {
-  constructor() {
-    this.candidates;
-    this.target;
-    this.set = new Set();
-    this.subset = new Array();
-    this.result = new Array();
-  }
-  dfs(index, sum) {
-    if (sum > this.target || index === this.candidates.length + 1) {
-      return;
-    } else if (sum === this.target) {
-      const newSubset = [...this.subset];
-      const newSubsetString = newSubset.join('-');
-      if (!this.set.has(newSubsetString)) {
-        this.set.add(newSubsetString)
-        this.result.push(newSubset);
-      }
-
-      return;
-    }
-
-    this.subset.push(this.candidates[index]);
-    this.dfs(index + 1, sum + this.candidates[index]);
-
-    this.subset.pop();
-    this.dfs(index + 1, sum);
-  }
   /**
    * @param {number[]} candidates
    * @param {number} target
    * @return {number[][]}
    */
-  combinationSum2(candidates, target) {
-    this.candidates = candidates;
-    candidates.sort((a, b) => a - b);
-    this.target = target;
-    this.dfs(0, 0);
+  combinationSum2(candidates, target, candSorted = candidates.sort((a, b) => a - b), index = 0, subarray = [], resSet = new Set(), res = []) {
+    if (target === 0) {
+      if (!resSet.has(subarray.join('-'))) {
+        resSet.add(subarray.join('-'));
+        res.push([...subarray]);
+      }
+      return;
+    } else if (target < 0 || index === candidates.length) {
+      return;
+    }
 
-    return this.result;
+    subarray.push(candSorted[index]);
+    this.combinationSum2(candidates, target - candSorted[index], candSorted, index + 1, subarray, resSet, res);
+    subarray.pop();
+    this.combinationSum2(candidates, target, candSorted, index + 1, subarray, resSet, res);
+
+    return res;
   }
 }
 
-const candidates = [1,2,3,4,5], target=7;
+const candidates = [9,2,2,4,6,1,5], target = 8;
 console.log(new Solution().combinationSum2(candidates, target));

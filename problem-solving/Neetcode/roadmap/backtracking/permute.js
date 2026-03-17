@@ -1,34 +1,22 @@
 class Solution {
-  constructor() {
-    this.nums
-    this.result = new Array();
-  }
-
   /**
    * @param {number[]} nums
    * @return {number[][]}
    */
-  permute(nums) {
-    const result = [];
-
-    if (nums.length === 1) {
-      return [[nums[0]]]
+  permute(nums, index = 0, res = []) {
+    if (index === nums.length) {
+      return res.push([...nums]);
     }
 
-    for (let i = 0; i < nums.length; i++) {
-      const n = nums.shift();
-      const perms = this.permute(nums);
-
-      for (let perm of perms) {
-        perm.push(n);
-      }
-      result.push(...perms);
-      nums.push(n);
+    for (let i = index; i < nums.length; i++) {
+      [nums[index], nums[i]] = [nums[i], nums[index]];
+      this.permute(nums, index + 1, res);
+      [nums[index], nums[i]] = [nums[i], nums[index]];
     }
 
-    return result;
+    return res;
   }
 }
 
 const nums = [1,2,3];
-console.log(new  Solution().permute(nums));
+console.log(new Solution().permute(nums));
