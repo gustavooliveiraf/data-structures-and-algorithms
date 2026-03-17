@@ -1,25 +1,26 @@
 class Solution {
-  /**
-   * @param {number[][]} intervals
-   * @return {number[][]}
-   */
-  merge(intervals) {
-    intervals.sort((a, b) => a[0] - b[0] !== 0 ? a[0] - b[0] : a[1] - b[1]);
+    /**
+     * @param {number[][]} intervals
+     * @return {number[][]}
+     */
+    merge(intervals) {
+      const res = new Array();
 
-    const stack = new Array(intervals[0]);
-    for (let curInter of intervals.slice(1)) {
-      if (curInter[0] <= stack.at(-1)[1]) {
-        const top = stack.pop();
-        const newInter = [top[0], Math.max(top[1], curInter[1])];
-
-        curInter = newInter;
+      intervals.sort((a, b) => a[0] - b[0]);
+      let prevInterval = intervals[0];
+      for (let i = 1; i < intervals.length; i++) {
+        if (intervals[i][0] > prevInterval[1] || intervals[i][1] < prevInterval[0]) {
+          res.push(prevInterval);
+          prevInterval = intervals[i];
+        } else {
+          prevInterval = [Math.min(prevInterval[0], intervals[i][0]), Math.max(prevInterval[1], intervals[i][1])];
+        }
       }
-      stack.push(curInter);
-    }
 
-    return stack;
-  }
+      res.push(prevInterval);
+      return res;
+    }
 }
 
-const intervals = [[1,4],[2,3]];
+const intervals = [[1,2],[2,3]];
 console.log(new Solution().merge(intervals));

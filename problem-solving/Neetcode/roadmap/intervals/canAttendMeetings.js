@@ -14,23 +14,47 @@ class Solution {
    * @returns {boolean}
    */
   canAttendMeetings(intervals) {
-    const pairs = intervals.map(interval => [interval.start, interval.end]);
-    pairs.sort((a, b) => a[0] - b[0]);
-
-    let prev = pairs.shift();
-    for (let curr of pairs) {
-      const [prevStart, prevEnd] = prev;
-      const [currStart, currEnd] = curr;
-      if (prevEnd > currStart) {
-        return false;
-      }
-
-      prev = curr;
+    intervals.sort((a, b) => a.start - b.start);
+    for (let i = 1; i < intervals.length; i++) {
+        if (intervals[i].start < intervals[i - 1].end) {
+            return false;
+        }
     }
 
     return true;
   }
 }
 
-const intervals = [[0,30], [5,10], [15,20]];
-console.log(new Solution().canAttendMeetings(intervals));
+/**
+ * Definition of Interval:
+ * class Interval {
+ *   constructor(start, end) {
+ *     this.start = start;
+ *     this.end = end;
+ *   }
+ * }
+ */
+
+class Solution2 {
+    /**
+     * @param {Interval[]} intervals
+     * @returns {boolean}
+     */
+    canAttendMeetings(intervals) {
+      const time = new Array(501).fill(0);
+      for (const { start, end } of intervals) {
+        time[start]++;
+        time[end]--;
+      }
+
+      let count = 0;
+      for (let i = 0; i < 501; i++) {
+        count += time[i];
+        if (count > 1) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+}

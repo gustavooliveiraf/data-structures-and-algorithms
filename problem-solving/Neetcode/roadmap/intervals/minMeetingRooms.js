@@ -14,27 +14,21 @@ class Solution {
    * @returns {number}
    */
   minMeetingRooms(intervals) {
-    const startArray = new Array(), endArray = new Array;
-    // intervals.forEach(intervals => [startArray.push(intervals.start), endArray.push(intervals.end)]);
-    intervals.forEach(intervals => [startArray.push(intervals[0]), endArray.push(intervals[1])]);
-    startArray.sort((a, b) => a - b);
-    endArray.sort((a, b) => a - b);
+    const time = new Array();
+    intervals.forEach(({ start, end }) => {
+      time.push([start, 1]);
+      time.push([end, -1]);
+    });
 
-    let count = 0, maxCount = 0;
-    for (let i = 0, j = 0; i < startArray.length;) {
-      if (endArray[j] > startArray[i]) {
-        i++;
-        count++;
-        maxCount = Math.max(maxCount, count);
-      } else {
-        j++;
-        count--;
-      }
+    time.sort((a, b) => a[0] !== b[0] ? a[0] - b[0] : a[1] - b[1]);
+
+    let localCount  = 0;
+    let globalCount = 0;
+    for (const [_, val] of time) {
+      localCount += val;
+      globalCount = Math.max(globalCount, localCount);
     }
 
-    return maxCount;
+    return globalCount;
   }
 }
-
-const intervals = [[0,40], [5,10], [15,20]];
-console.log(new Solution().minMeetingRooms(intervals));
