@@ -1,78 +1,62 @@
-class HeapNode {
-  constructor(index, time) {
-    this.index = index;
-    this.time  = time;
-  }
-}
-
 class Heap {
   constructor() {
-    this.heap = new Array();
+    this.arr = new Array();
   }
 
-  heapify() {
-    this.heap.sort((a, b) => b.time - a.time);
+  isEmpty() {
+    return this.arr.length === 0;
   }
 
   push(index, time) {
-    this.heap.push(new HeapNode(index, time));
-    this.heapify();
+    this.arr.push([index, time]);
+    this.arr.sort((a, b) => b[1] - a[1]);
   }
 
   pop() {
-    return this.heap.pop().index;
-  }
-
-  empty() {
-    return this.heap.length === 0;
+    return this.arr.pop();
   }
 }
 
 class GraphNode {
-  constructor(index, time) {
-    this.index = index;
-    this.time  = time;
+  constructor(target, time) {
+    this.target = target;
+    this.time = time;
   }
 }
 
 class Graph {
-  constructor(size, edges) {
-    this.adjList = Array.from({ length: size }, () => new Array());
-    this.init(edges);
+  constructor(n, times) {
+    this.adjList;
+    this.init(n, times);
   }
 
-  init(edges) {
-    for (const [src, dest, time] of edges) {
-      this.adjList[src].push(new GraphNode(dest, time));
+  init(n, times) {
+    this.adjList = Array.from({ length: n + 1 }, () => new Array());
+    for (const [src, target, time] of times) {
+      this.adjList[src].push(new GraphNode(target, time));
     }
   }
 }
 
 class Solution {
-  dijkstra(adjList, n, k) {
-    const distance = new Array(n).fill(Infinity);
-    const visited  = new Array(n).fill(false);
-    const heap     = new Heap(n);
-
-    distance[k] = 0;
+  dijkstra(adjList, k, visited) {
+    let res = 0;
+    const heap = new Heap();
     heap.push(k, 0);
 
-    while (!heap.empty()) {
-      const curIndex = heap.pop();
-      if (visited[curIndex]) continue;
+    while(!heap.isEmpty()) {
+      const [index, curTime] = heap.pop();
 
-      visited[curIndex] = true;
+      if (visited.has(index)) continue;
+      visited.add(index);
+      res = curTime;
 
-      for (const { index, time } of adjList[curIndex]) {
-        if (!visited[index] && distance[index] > distance[curIndex] + time) {
-          distance[index] = distance[curIndex] + time;
-          heap.push(index, distance[index]);
-        }
+      for (const { target, time } of adjList[index]) {
+        heap.push(target, curTime + time);
       }
     }
 
-    distance[0] = -Infinity;
-    return distance;
+    return res;
   }
 
   /**
@@ -82,12 +66,12 @@ class Solution {
    * @return {number}
    */
   networkDelayTime(times, n, k) {
-    const graph = new Graph(n + 1, times);
+    const { adjList } = new Graph(n, times);
+    const visited = new Set();
 
-    const distance = this.dijkstra(graph.adjList, n + 1, k);
+    const time = this.dijkstra(adjList, k, visited);
 
-    const res = distance.reduce((acc, cur) => Math.max(acc, cur));
-    return res !== Infinity ? res : -1;
+    return visited.size === n ? time : -1;
   }
 }
 
