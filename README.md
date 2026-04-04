@@ -1,11 +1,12 @@
 # Data Structures & Algorithms
 
-Personal problem solving for [HackerRank](https://www.hackerrank.com/gustavooliveiraf), [LeetCode](https://leetcode.com/u/gustavooliveiraf/), [NeetCode](https://neetcode.io/roadmap) platforms.
+Personal solutions to problems on the [HackerRank](https://www.hackerrank.com/gustavooliveiraf), [LeetCode](https://leetcode.com/u/gustavooliveiraf/) and [NeetCode](https://neetcode.io/roadmap) platforms.
 
 ## HackerRank Problem Solving Certificate
+<img width="1067" height="800" alt="image" src="https://github.com/user-attachments/assets/e2f5955c-f332-4dd6-a442-423c911acc78" />
 
-![Problem Solving Certificate](https://i.postimg.cc/DwzMBN1s/download-1.png)
+Certificate: [link](https://www.hackerrank.com/certificates/dec0d0c4b59d)
 
 ## NeetCode roadmap progress screenshot
+<img width="881" height="834" alt="image" src="https://github.com/user-attachments/assets/1dd857aa-1a97-47af-88bb-eedf19bfb11a" />
 
-![NeetCode 150 problems](<img width="881" height="834" alt="image" src="https://github.com/user-attachments/assets/2125089b-ac6d-4a60-9846-6233b11d787e" />)
