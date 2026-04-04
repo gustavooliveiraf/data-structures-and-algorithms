@@ -1,0 +1,8 @@
+maxSubArray: https://neetcode.io/problems/maximum-subarray/question?list=neetcode150, https://leetcode.com/problems/maximum-subarray/description/
+canJump: https://neetcode.io/problems/jump-game/question?list=neetcode150, https://leetcode.com/problems/jump-game/description/
+jump: https://neetcode.io/problems/jump-game-ii/question?list=neetcode150, https://leetcode.com/problems/jump-game-ii/description/
+canCompleteCircuit: https://neetcode.io/problems/gas-station/question?list=neetcode150, https://leetcode.com/problems/gas-station/description/
+isNStraightHand: https://neetcode.io/problems/hand-of-straights/question?list=neetcode150, https://leetcode.com/problems/hand-of-straights/description/
+mergeTriplets: https://neetcode.io/problems/merge-triplets-to-form-target/question?list=neetcode150, https://leetcode.com/problems/merge-triplets-to-form-target-triplet/description/
+partitionLabels: https://neetcode.io/problems/partition-labels/question?list=neetcode150, https://leetcode.com/problems/partition-labels/description/
+checkValidString: https://neetcode.io/problems/valid-parenthesis-string/question?list=neetcode150, https://leetcode.com/problems/valid-parenthesis-string/description/

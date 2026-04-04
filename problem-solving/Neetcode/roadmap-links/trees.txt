@@ -1,0 +1,15 @@
+invertTree: https://neetcode.io/problems/invert-a-binary-tree/question?list=neetcode150, https://leetcode.com/problems/invert-binary-tree/description/
+maxDepth: https://neetcode.io/problems/depth-of-binary-tree/question?list=neetcode150, https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+diameterOfBinaryTree: https://neetcode.io/problems/binary-tree-diameter/question?list=neetcode150, https://leetcode.com/problems/diameter-of-binary-tree/description/
+isBalanced: https://neetcode.io/problems/balanced-binary-tree/question?list=neetcode150, https://leetcode.com/problems/balanced-binary-tree/description/
+isSameTree: https://neetcode.io/problems/same-binary-tree/question?list=neetcode150, https://leetcode.com/problems/same-tree/description/
+isSubtree: https://neetcode.io/problems/subtree-of-a-binary-tree/question?list=neetcode150, https://leetcode.com/problems/subtree-of-another-tree/description/
+lowestCommonAncestor: https://neetcode.io/problems/lowest-common-ancestor-in-binary-search-tree/question?list=neetcode150, https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+levelOrder: https://neetcode.io/problems/level-order-traversal-of-binary-tree/question?list=neetcode150, https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+rightSideView: https://neetcode.io/problems/binary-tree-right-side-view/question?list=neetcode150, https://leetcode.com/problems/binary-tree-right-side-view/description/
+goodNodes: https://neetcode.io/problems/count-good-nodes-in-binary-tree/question?list=neetcode150, https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/
+isValidBST: https://neetcode.io/problems/valid-binary-search-tree/question?list=neetcode150, https://leetcode.com/problems/validate-binary-search-tree/description/
+kthSmallest: https://neetcode.io/problems/kth-smallest-integer-in-bst/question?list=neetcode150, https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/'
+buildTree: https://neetcode.io/problems/binary-tree-from-preorder-and-inorder-traversal/question?list=neetcode150, https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+maxPathSum: https://neetcode.io/problems/binary-tree-maximum-path-sum/question?list=neetcode150, https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+Codec: https://neetcode.io/problems/serialize-and-deserialize-binary-tree/question?list=neetcode150, https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/

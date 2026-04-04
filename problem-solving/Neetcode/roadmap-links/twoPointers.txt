@@ -1,0 +1,5 @@
+isPalindrome: https://neetcode.io/problems/is-palindrome/question?list=neetcode150, https://leetcode.com/problems/valid-palindrome/description/
+twoSum: https://neetcode.io/problems/two-integer-sum-ii/question?list=neetcode150, https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+threeSum: https://neetcode.io/problems/three-integer-sum/question?list=neetcode150, https://leetcode.com/problems/3sum/description/
+maxArea: https://neetcode.io/problems/max-water-container/question?list=neetcode150, https://leetcode.com/problems/container-with-most-water/description/
+trap: https://neetcode.io/problems/trapping-rain-water/question?list=neetcode150, https://leetcode.com/problems/trapping-rain-water/description/

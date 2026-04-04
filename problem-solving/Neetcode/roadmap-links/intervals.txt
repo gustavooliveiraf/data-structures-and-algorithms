@@ -1,0 +1,6 @@
+insert: https://neetcode.io/problems/insert-new-interval/question?list=neetcode150, https://leetcode.com/problems/insert-interval/description/
+merge: https://neetcode.io/problems/merge-intervals/question?list=neetcode150, https://leetcode.com/problems/merge-intervals/description/
+eraseOverlapIntervals: https://neetcode.io/problems/non-overlapping-intervals/question?list=neetcode150, https://leetcode.com/problems/non-overlapping-intervals/description/
+canAttendMeetings: https://neetcode.io/problems/meeting-schedule/question?list=neetcode150, https://leetcode.com/problems/meeting-rooms/description/
+minMeetingRooms: https://neetcode.io/problems/meeting-schedule-ii/question?list=neetcode150, https://leetcode.com/problems/meeting-rooms-ii/description/
+minInterval: https://neetcode.io/problems/minimum-interval-including-query/question?list=neetcode150, https://leetcode.com/problems/minimum-interval-to-include-each-query/description/

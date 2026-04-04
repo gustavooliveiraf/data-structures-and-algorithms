@@ -1,0 +1,6 @@
+maxProfit: https://neetcode.io/problems/buy-and-sell-crypto/question?list=neetcode150, https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+lengthOfLongestSubstring: https://neetcode.io/problems/longest-substring-without-duplicates/question?list=neetcode150, https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+characterReplacement: https://neetcode.io/problems/longest-repeating-substring-with-replacement/question?list=neetcode150, https://leetcode.com/problems/longest-repeating-character-replacement/description/
+checkInclusion: https://neetcode.io/problems/permutation-string/question?list=neetcode150, https://leetcode.com/problems/permutation-in-string/description/
+minWindow: https://neetcode.io/problems/minimum-window-with-characters/question?list=neetcode150, https://leetcode.com/problems/minimum-window-substring/description/
+maxSlidingWindow: https://neetcode.io/problems/sliding-window-maximum/question?list=neetcode150, https://leetcode.com/problems/sliding-window-maximum/description/

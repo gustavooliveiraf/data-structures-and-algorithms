@@ -1,0 +1,9 @@
+hasDuplicate: https://neetcode.io/problems/duplicate-integer, https://leetcode.com/problems/contains-duplicate/description/
+isAnagram: https://neetcode.io/problems/is-anagram/question?list=neetcode150, https://leetcode.com/problems/valid-anagram/description/
+twoSum: https://neetcode.io/problems/two-integer-sum/question?list=neetcode150, https://leetcode.com/problems/two-sum/description/
+groupAnagrams: https://neetcode.io/problems/anagram-groups/question?list=neetcode150, https://leetcode.com/problems/group-anagrams/description/
+topKFrequent: https://neetcode.io/problems/top-k-elements-in-list/question?list=neetcode150, https://leetcode.com/problems/top-k-frequent-elements/description/
+encodeAndDecodeStrings: https://neetcode.io/problems/string-encode-and-decode/question?list=neetcode150, https://leetcode.com/problems/encode-and-decode-strings/description/
+productExceptSelf: https://neetcode.io/problems/products-of-array-discluding-self/question?list=neetcode150, https://leetcode.com/problems/product-of-array-except-self/description/
+isValidSudoku: https://neetcode.io/problems/valid-sudoku/question?list=neetcode150, https://leetcode.com/problems/valid-sudoku/description/
+longestConsecutive: https://neetcode.io/problems/longest-consecutive-sequence/question?list=neetcode150, https://leetcode.com/problems/longest-consecutive-sequence/description/

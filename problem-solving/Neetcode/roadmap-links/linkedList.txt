@@ -1,0 +1,11 @@
+reverseList: https://neetcode.io/problems/reverse-a-linked-list/question?list=neetcode150, https://leetcode.com/problems/reverse-linked-list
+mergeTwoLists: https://neetcode.io/problems/merge-two-sorted-linked-lists, https://leetcode.com/problems/merge-two-sorted-lists
+hasCycle: https://neetcode.io/problems/linked-list-cycle-detection/question?list=neetcode150, https://leetcode.com/problems/linked-list-cycle/description/
+reorderList: https://neetcode.io/problems/reorder-linked-list/question?list=neetcode150, https://leetcode.com/problems/reorder-list/description/
+removeNthFromEnd: https://neetcode.io/problems/remove-node-from-end-of-linked-list/question?list=neetcode150, https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+copyRandomList: https://neetcode.io/problems/copy-linked-list-with-random-pointer/question?list=neetcode150, https://leetcode.com/problems/copy-list-with-random-pointer/description/
+addTwoNumbers: https://neetcode.io/problems/add-two-numbers/question?list=neetcode150, https://leetcode.com/problems/add-two-numbers/description/
+findDuplicate: https://neetcode.io/problems/find-duplicate-integer/question?list=neetcode150, https://leetcode.com/problems/find-the-duplicate-number/description/
+LRUCache: https://neetcode.io/problems/lru-cache/question?list=neetcode150, https://leetcode.com/problems/lru-cache/description/
+mergeKLists: https://neetcode.io/problems/merge-k-sorted-linked-lists/question?list=neetcode150, https://leetcode.com/problems/merge-k-sorted-lists/description/
+reverseKGroup: https://neetcode.io/problems/reverse-nodes-in-k-group/question?list=neetcode150, https://leetcode.com/problems/reverse-nodes-in-k-group/description/

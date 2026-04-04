@@ -1,0 +1,10 @@
+subsets: https://neetcode.io/problems/subsets/question?list=neetcode150, https://leetcode.com/problems/subsets/description/
+combinationSum: https://neetcode.io/problems/combination-target-sum/question?list=neetcode150, https://leetcode.com/problems/combination-sum/description/
+combinationSum2: https://neetcode.io/problems/combination-target-sum-ii/question?list=neetcode150, https://leetcode.com/problems/combination-sum-ii/description/
+permute: https://neetcode.io/problems/permutations/question?list=neetcode150, https://leetcode.com/problems/permutations/description/
+combinationSum2: https://neetcode.io/problems/subsets-ii/question?list=neetcode150, https://leetcode.com/problems/subsets-ii/description/
+generateParenthesis: https://neetcode.io/problems/generate-parentheses/question?list=neetcode150, https://leetcode.com/problems/generate-parentheses/description/
+exist: https://neetcode.io/problems/search-for-word/question?list=neetcode150, https://leetcode.com/problems/word-search/description/
+partition: https://neetcode.io/problems/palindrome-partitioning/question?list=neetcode150, https://leetcode.com/problems/palindrome-partitioning/description/
+letterCombinations: https://neetcode.io/problems/combinations-of-a-phone-number/question?list=neetcode150, https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+solveNQueens: https://neetcode.io/problems/n-queens/question?list=neetcode150, https://leetcode.com/problems/n-queens/description/
