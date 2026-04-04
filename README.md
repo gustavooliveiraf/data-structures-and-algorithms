@@ -6,6 +6,6 @@ Personal problem solving for [HackerRank](https://www.hackerrank.com/gustavooliv
 
 ![Problem Solving Certificate](https://i.postimg.cc/DwzMBN1s/download-1.png)
 
-## HackerRank Gold Level Badge by solving challenges in the Algorithms and Data Structures tracks
+## NeetCode roadmap progress screenshot
 
-![Gold level badge](https://i.ibb.co/PgrWLS5/Screenshot-from-2020-06-04-23-35-59.png)
+![NeetCode 150 problems](<img width="881" height="834" alt="image" src="https://github.com/user-attachments/assets/2125089b-ac6d-4a60-9846-6233b11d787e" />)
