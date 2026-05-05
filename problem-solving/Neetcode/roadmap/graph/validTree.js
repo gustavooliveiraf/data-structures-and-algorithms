@@ -1,56 +1,50 @@
 class Graph {
-  constructor(n, edges) {
+  constructor(n) {
     this.adjList = Array.from({ length: n }, () => new Array());
-    this.addEdges(edges);
   }
 
-  addEdges(edges) {
-    for (let i = 0; i < edges.length; i++) {
-      const [u, v] = edges[i];
-      this.adjList[u].push(v);
-      this.adjList[v].push(u);
-    }
+  addEdge(u, v) {
+    this.adjList[u].push(v);
+    this.adjList[v].push(u);
   }
 }
 
-class Solution {
-  isCyclic(adjList, visited, curIndex, parentIndex) {
-    visited[curIndex] = true;
+function isCyclic(adjList, visited, curIndex, parentIndex) {
+  visited.add(curIndex);
 
-    for (const v of adjList[curIndex]) {
-      if (!visited[v]) {
-        if (this.isCyclic(adjList, visited, v, curIndex)) {
-          return true;
-        }
-      } else if (v !== parentIndex) {
+  for (const v of adjList[curIndex]) {
+    if (!visited.has(v)) {
+      if (isCyclic(adjList, visited, v, curIndex)) {
         return true;
       }
+    } else if (v !== parentIndex) {
+      return true;
     }
-
-    return false;
   }
 
-  /**
-   * @param {number} n
-   * @param {number[][]} edges
-   * @returns {boolean}
-   */
-  validTree(n, edges) {
-    const graph   = new Graph(n, edges);
-    const visited = new Array(n).fill(false);
+  return false;
+}
 
-    if (this.isCyclic(graph.adjList, visited, 0, -1)) {
-      return false;
-    }
+class Solution {
+    /**
+     * @param {number} n
+     * @param {number[][]} edges
+     * @returns {boolean}
+     */
+    validTree(n, edges) {
+      const visited = new Set();
+      const graph = new Graph(n);
 
-    for (let i = 0; i < n; i++) {
-      if (visited[i] === false) {
+      for (const [u, v] of edges) {
+        graph.addEdge(u, v);
+      }
+
+      if (isCyclic(graph.adjList, visited, 0, -1)) {
         return false;
       }
-    }
 
-    return true;
-  }
+      return visited.size === n;
+    }
 }
 
 const n = 5, edges = [[0, 1], [0, 2], [0, 3], [1, 4]];

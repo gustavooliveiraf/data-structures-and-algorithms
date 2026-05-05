@@ -9,11 +9,11 @@ class Heap {
 
   push(index, time) {
     this.arr.push([index, time]);
-    this.arr.sort((a, b) => b[1] - a[1]);
+    this.arr.sort((a, b) => b[1] - a[1]); // O(nlogn), O(logn)
   }
 
   pop() {
-    return this.arr.pop();
+    return this.arr.pop(); // O(logn)
   }
 }
 

@@ -11,3 +11,5 @@ validTree: https://neetcode.io/problems/valid-tree/question?list=neetcode150, ht
 countComponents: https://neetcode.io/problems/count-connected-components/question?list=neetcode150, https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/
 findRedundantConnection: https://neetcode.io/problems/redundant-connection/question?list=neetcode150, https://leetcode.com/problems/redundant-connection/
 ladderLength: https://neetcode.io/problems/word-ladder/question?list=neetcode150, https://leetcode.com/problems/word-ladder/description/
+calcEquation: https://leetcode.com/problems/evaluate-division/description/
+calcEquation: https://neetcode.io/problems/evaluate-division/question?list=allNC

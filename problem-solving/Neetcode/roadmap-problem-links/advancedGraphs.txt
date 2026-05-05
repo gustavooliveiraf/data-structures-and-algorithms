@@ -4,3 +4,4 @@ minCostConnectPoints: https://neetcode.io/problems/min-cost-to-connect-points/qu
 swimInWater: https://neetcode.io/problems/swim-in-rising-water/question?list=neetcode150, https://leetcode.com/problems/swim-in-rising-water/description/
 foreignDictionary: https://neetcode.io/problems/foreign-dictionary/question?list=neetcode150, https://leetcode.com/problems/alien-dictionary/description/
 findCheapestPrice: https://neetcode.io/problems/cheapest-flight-path/question?list=neetcode150, https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
+networkDelayTime: https://neetcode.io/problems/network-delay-time/question?list=neetcode250
