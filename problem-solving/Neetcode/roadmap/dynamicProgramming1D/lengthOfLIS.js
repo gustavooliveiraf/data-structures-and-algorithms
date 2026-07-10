@@ -1,4 +1,4 @@
-// FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out of memory
+// Time Limit Exceeded. You may have an infinite loop or your code is too inefficient.
 class SolutionBacktracking {
   /**
    * @param {number[]} nums
@@ -12,7 +12,7 @@ class SolutionBacktracking {
       return memo[i][j];
     }
 
-    let lis = this.lengthOfLIS(nums, i + 1, j);
+    let lis = this.lengthOfLIS(nums, i + 1, j, memo);
 
     if (j === -1 || nums[j] < nums[i]) {
       lis = Math.max(lis, 1 + this.lengthOfLIS(nums, i + 1, i));
